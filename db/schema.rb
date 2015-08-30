@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830093013) do
+ActiveRecord::Schema.define(version: 20150830135014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20150830093013) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "results", ["token"], name: "index_results_on_token", unique: true, using: :btree
+
   create_table "typeforms", force: :cascade do |t|
     t.jsonb    "body"
-    t.string   "from_url"
-    t.integer  "from_id"
+    t.string   "form_url"
+    t.string   "form_id"
     t.jsonb    "form_definition"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

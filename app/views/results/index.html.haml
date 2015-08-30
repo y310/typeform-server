@@ -1,0 +1,15 @@
+%h2
+  Results for
+  = link_to @typeform.form_id, @typeform
+%table.table
+  %tr
+    %th ID
+    %th UID
+    %th Token
+    %th Created At
+  - @results.each do |result|
+    %tr
+      %td= link_to result.id, typeform_result_path(result.typeform, result)
+      %td= result.uid
+      %td= result.token
+      %td= result.created_at

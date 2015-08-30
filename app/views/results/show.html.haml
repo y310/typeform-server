@@ -1,0 +1,20 @@
+%h2 Result
+%table.table
+  %tr
+    %th ID
+    %td= @result.id
+  %tr
+    %th Created At
+    %td= @result.created_at
+  %tr
+    %th UID
+    %td= @result.uid
+  %tr
+    %th Token
+    %td= @result.token
+  %tr
+    %th Form
+    %td= link_to @result.typeform.form_id, @result.typeform
+  %tr
+    %th Answers
+    %td= format_json(@result.answers)

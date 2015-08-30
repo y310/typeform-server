@@ -1,0 +1,22 @@
+%h2
+  Typeform
+  %small= link_to 'results', typeform_results_path(@typeform)
+%table.table
+  %tr
+    %th ID
+    %td= @typeform.id
+  %tr
+    %th Created At
+    %td= @typeform.created_at
+  %tr
+    %th Request Body
+    %td= format_json(@typeform.body)
+  %tr
+    %th Form URL
+    %td= link_to @typeform.form_url, @typeform.form_url
+  %tr
+    %th Form ID
+    %td= @typeform.form_id
+  %tr
+    %th Form Definition
+    %td= format_json(@typeform.form_definition)

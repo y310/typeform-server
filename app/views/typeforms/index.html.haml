@@ -1,0 +1,14 @@
+%h2
+  Typeforms
+  %small= link_to fa_icon(:plus), new_typeform_path
+%table.table
+  %tr
+    %th ID
+    %th Form ID
+    %th Form URL
+  - @typeforms.each do |typeform|
+    %tr
+      %td= link_to typeform.id, typeform
+      %td= typeform.form_id
+      %td= link_to typeform.form_url, typeform.form_url
+      %td= link_to 'Results', typeform_results_path(typeform)
